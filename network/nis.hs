@@ -13,7 +13,12 @@ main = shelly $ verbosely $ do
          sudo_ "apt-get" ["update"]
          sudo_ "apt-get" ["install", "nis", "-y", "-q"]
          sudo_ "apt-get" ["install", "sysv-rc-conf", "-y", "-q"]
-
+         addNIS
+         ypGateway
+         users <- usersconfig
+         makeHome $ toUsername users
+         restartNIS
+         
 --add the lines 'NIS' to the specified four lines in nsswitch.conf
 
 addNIS = do contents <- readfile "/etc/nsswitch.conf"

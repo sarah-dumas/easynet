@@ -18,7 +18,8 @@ main = shelly $ verbosely $ do
 --move directories from home to home.computername
 
 directoryMove = do computername <- readfile "computername.config"
-                   sudo_ "mv" ["/home", "/home." `T.append` computername]
+                   let stripped = T.strip computername
+                   sudo_ "mv" ["/home", "/home." `T.append` stripped]
 
 
 --create a directory to use as a mount point named /home

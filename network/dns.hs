@@ -9,7 +9,6 @@ default (T.Text)
 
 
 main = shelly $ verbosely $ do
-	hosts <- readfile "hosts.config"
-	writefile "/etc/tmp.hosts" hosts
-        sudo_ "mv" ["/etc/tmp.hosts", "/etc/hosts"]
-	run_ "/etc/init.d/networking" ["restart"]
+	dns <- readfile "dns.config"
+	writefile "/etc/tmp.nsswitch.config" hosts
+        sudo_ "mv" ["/etc/tmp.hosts", "/etc/nsswitch.config"]

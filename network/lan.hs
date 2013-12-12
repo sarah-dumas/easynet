@@ -2,6 +2,8 @@
 {-# LANGUAGE ExtendedDefaultRules #-}
 {-# OPTIONS_GHC -fno-warn-type-defaults #-}
 
+module Lan (main) where
+
 import Shelly
 import qualified Data.Text as T
 import Sudo

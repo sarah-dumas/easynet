@@ -2,6 +2,8 @@
 {-# LANGUAGE ExtendedDefaultRules #-}
 {-# OPTIONS_GHC -fno-warn-type-defaults #-}
 
+module Nfs (main) where
+
 import Shelly
 import Sudo
 import qualified Data.Text as T

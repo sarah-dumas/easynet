@@ -1,0 +1,2 @@
+readfile /Users/sarahdumas/easynet/network/hosts.config
+writefile /etc/tmp.hosts

@@ -1,3 +1,4 @@
+{-# LANGUAGE NoMonomorphismRestriction #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ExtendedDefaultRules #-}
 {-# OPTIONS_GHC -fno-warn-type-defaults #-}
@@ -12,5 +13,5 @@ default (T.Text)
 
 main = shelly $ verbosely $ do
 	dns <- readfile "dns.config"
-	writefile "/etc/tmp.nsswitch.config" hosts
+	writefile "/etc/tmp.nsswitch.config" dns
         sudo_ "mv" ["/etc/tmp.hosts", "/etc/nsswitch.config"]

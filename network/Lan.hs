@@ -13,5 +13,8 @@ default (T.Text)
 
 main = shelly $ verbosely $ do
 	hosts <- readfile "hosts.config"
+        echo "Writing out hostfile."
 	writefile "/etc/hosts" hosts
-	run_ "/etc/init.d/networking" ["restart"]
+        echo "Moving hostfile to appropriate position."
+	run_ "/etc/init.d/networking" ["restart", "-y", "-q"]
+        echo "Restarting networking."

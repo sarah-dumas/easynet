@@ -1,24 +1,36 @@
-sudo: unable to resolve host ubuntu
-sudo: unable to resolve host ubuntu
-sudo: unable to resolve host ubuntu
-sudo: unable to resolve host ubuntu
-sudo: unable to resolve host ubuntu
-sudo: unable to resolve host ubuntu
-sudo: unable to resolve host ubuntu
-/etc/init.d/networking restart
+Writing out hostfile.
+Moving hostfile to appropriate position.
+/etc/init.d/networking restart -y -q
  * Running /etc/init.d/networking restart is deprecated because it may not enable again some interfaces
  * Reconfiguring network interfaces...
    ...done.
+Restarting networking.
+writing nsswitch.conf out.
 sudo mv /etc/temp.nsswitch.conf /etc/nsswitch.conf
+Moving nsswitch.conf to appropriate location.
+Appending gateway to yp.conf
+Default domain isit.cs.umb.edu
+
 mkdir /home/sdumas/
-chown sdumas /home/sdumas/
-chgrp sdumas /home/sdumas
+Making home directory for user sdumas.
 sudo service ypbind restart
 ypbind stop/waiting
-ypbind start/running, process 22568
+ypbind start/running, process 1230
 sudo sysv-rc-conf ypbind on
+restarting NIS.
+chown sdumas /home/sdumas/
+Changing ownership and group rights for home directory of user sdumas.
+chgrp sdumas /home/sdumas
 sudo mv /home /home.itvm26-5
+Moving home directories to home.itvm26-5.
 sudo mkdir /home
+Making new mount point.
 sudo mv /etc/tmp.passwd /etc/passwd
+Changing passwd file to respecify sysadmin's home.
+!!!WARNING!!! This may break some installs!
+Appending auto.master with information for auto.home.
+Appending export rules to exports file.
+Writing out DNS file.
 sudo mv /etc/tmp.nsswitch.config /etc/nsswitch.config
-setup complete.
+Moving DNS file into appropriate place.
+setup complete. You may need to restart your virtual machine.

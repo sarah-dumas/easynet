@@ -1,0 +1,19 @@
+sudo: unable to resolve host ubuntu
+sudo: unable to resolve host ubuntu
+ypbind: unrecognized service
+/etc/init.d/networking restart
+ * Running /etc/init.d/networking restart is deprecated because it may not enable again some interfaces
+ * Reconfiguring network interfaces...
+   ...done.
+sudo mv /etc/temp.nsswitch.conf /etc/nsswitch.conf
+mkdir /home/sdumas/
+chown sdumas /home/sdumas/
+chgrp sdumas /home/sdumas
+sudo service ypbind restart
+EasyNet: 
+log of commands saved to: /.shelly/2.txt
+Exception: error running: sudo service ypbind restart
+exit status: 1
+stderr: sudo: unable to resolve host ubuntu
+ypbind: unrecognized service
+

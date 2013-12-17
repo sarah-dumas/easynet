@@ -1,0 +1,15 @@
+This is a writeup for the final project. The project appears to work as
+intended for all tests performed. There are a few details which may cause the
+project to not work when run on a clean machine:
+
+1. Project assumes pre-installation of all required packages.
+
+2. Project assumes an accurate auto.home is in place and functional. I did
+not include this step because my machine (itvm26-1) has an out-of-date
+version of auto.home. This file changes often so the assumption is that 
+someone has carried or will carry over auto.home later.
+
+3. The hosts.config file is not complete and was simply implemented
+for testing. If all blocks are filled in then the file will work as intended,
+at the moment it contains routes only to itvm23-1 and will not connect to 
+any other machines.
